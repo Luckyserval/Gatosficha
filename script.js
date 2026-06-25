@@ -59,16 +59,21 @@ function generarFicha() {
 }
 
 function descargarFicha() {
-  html2canvas(document.querySelector("#preview")).then(canvas => {
+  const ficha = document.querySelector("#preview");
+
+  html2canvas(ficha, {
+    scale: 4,              // multiplica la resolución (2, 3 o 4)
+    useCORS: true,         // permite imágenes externas
+    allowTaint: true,      // permite imágenes locales
+    logging: false
+  }).then(canvas => {
+    // Crear un link de descarga
     const link = document.createElement("a");
     link.download = "ficha.png";
-    link.href = canvas.toDataURL();
+    // Exportar en PNG con calidad máxima
+    link.href = canvas.toDataURL("image/png", 1.0);
     link.click();
   });
 }
 
-// recalcular puntos cada vez que cambian stats
-document.querySelectorAll("input[type=number]").forEach(input => {
-  input.addEventListener("input", calcularCoste);
-});
 
