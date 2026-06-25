@@ -1,23 +1,18 @@
-body {
-  font-family: 'Verdana', sans-serif;
-  background: #f0f4f8;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
 .ficha {
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   padding: 20px;
   width: 500px;
-  margin-top: 20px;
+  margin: 20px auto; /* centra la ficha */
+  text-align: center; /* centra el contenido */
 }
 
 .ficha img {
-  max-width: 150px;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  display: block;
+  margin: 0 auto; /* centra la imagen */
+  max-width: 300px; /* aumenta el tamaño máximo */
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
