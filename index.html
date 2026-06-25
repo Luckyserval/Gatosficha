@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ficha de Gato</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Crear ficha de personaje</h2>
+
+<form id="formFicha">
+  Nombre: <input type="text" id="nombre"><br><br>
+  Descripción: <textarea id="descripcion"></textarea><br><br>
+  Imagen: <input type="file" id="imagen" accept="image/*"><br><br>
+
+  <!-- Stats -->
+  Fuerza: <input type="number" id="fuerza" min="1" max="10" value="5"><br>
+  Velocidad: <input type="number" id="velocidad" min="1" max="10" value="5"><br>
+  Agilidad: <input type="number" id="agilidad" min="1" max="10" value="5"><br>
+  Resistencia: <input type="number" id="resistencia" min="1" max="10" value="5"><br>
+  Nado: <input type="number" id="nado" min="1" max="10" value="5"><br>
+  Escalada: <input type="number" id="escalada" min="1" max="10" value="5"><br><br>
+
+  <p>Puntos restantes: <span id="puntosRestantes">18</span></p>
+
+  <button type="button" onclick="generarFicha()">Generar ficha</button>
+</form>
+
+<div id="preview" class="ficha"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
